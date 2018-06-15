@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: subject
+spec:
+  selector:
+    matchLabels:
+      app: subject
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: subject
+    spec:
+      containers:
+      - name: sentence-word-service-alt
+        image: chrimic/sentence-word-service-alt:latest
+        args: ["-jar", "-Dspring.profiles.active=subject", "word.jar"]
+        ports:
+        - containerPort: 8080

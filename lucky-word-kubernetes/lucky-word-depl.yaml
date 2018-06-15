@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lucky-word
+  labels:
+    app: lucky-word
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: lucky-word
+  template:
+    metadata:
+      labels:
+        app: lucky-word
+    spec:
+      containers:
+      - name: lucky-word-client
+        image: chrimic/lucky-word-cloud-config-client:latest
+        args: ["-Dspring.cloud.config.uri=http://common-config:8888", "-jar", "lucky-word.jar"]
+        ports:
+        - containerPort: 8080

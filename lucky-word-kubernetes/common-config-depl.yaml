@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: common-config
+  labels:
+    app: common-config
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: common-config
+  template:
+    metadata:
+      labels:
+        app: common-config
+    spec:
+      containers:
+      - name: lucky-word-common-config-server
+        image: chrimic/lucky-word-common-config-server:latest
+        ports:
+        - containerPort: 8888
