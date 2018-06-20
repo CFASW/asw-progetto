@@ -7,6 +7,7 @@ Questa repo contiene il progetto del corso di Architetture e Sistemi Software su
  - Giammarco Sommaini
 
 
+
 ## Descrizione
 
 Il progetto riguarda l'orchestrazione di tre applicazioni:
@@ -14,6 +15,7 @@ Il progetto riguarda l'orchestrazione di tre applicazioni:
  - [Lucky word](https://github.com/aswroma3/asw/tree/master/projects/asw-875-spring-cloud/a2-lucky-word-cloud-config-client)
  - [Hello](https://github.com/aswroma3/asw/tree/master/projects/asw-895-docker-orchestrazione/c-hello-service)
  - [Sentence](https://github.com/aswroma3/asw/tree/master/projects/asw-895-docker-orchestrazione/e-sentence-stack-zuul)
+ 
  
  
 ### Orchestrazione di "Hello"
@@ -38,7 +40,8 @@ Waiting for rollout to finish: 0 of 1 updated replicas are available...
 deployment "hello" successfully rolled out
 ```
 
----
+
+#### Accedere al servizio
 
 Leggere l'ip esterno di un nodo (campo NAME):
 
@@ -113,9 +116,37 @@ $ kubectl delete deployment hello
 ```
  
  
+ 
 ### Orchestrazione di "Lucky word"
 
 Per la natura di "Lucky word" l'unico modo per avviarlo correttamente è quello di avviare per prima il *Deployment* e il *Service* del **config-server**, e solo dopo che questo sia correttamente avviato si può avviare anche il *Deployment* e il *Service* di **lucky-word**.
+
+```bash
+$ kubectl create -f lucky-word-kubernetes/common-config-depl.yaml
+$ kubectl create -f lucky-word-kubernetes/common-config-service.yaml
+```
+
+Attendere che il deployment vada a buon fine:
+
+```bash
+$ kubectl rollout status deployment/common-config
+```
+
+Avviare il client:
+
+```bash
+$ kubectl create -f lucky-word-kubernetes/lucky-word-depl.yaml
+$ kubectl create -f lucky-word-kubernetes/lucky-word-service.yaml
+```
+
+Attendere che il deployment vada a buon fine:
+
+```bash
+$ kubectl rollout status deployment/lucky-word
+```
+
+Ora è possibile [accedere al servizio come fatto con hello](#accedere-al-servizio).
+
 
 
 ### Orchestrazione di "Sentence"
@@ -130,7 +161,7 @@ done
 Attendere che i deployment vadano a buon fine:
 
 ```bash
-kubectl get pods
+$ watch kubectl get pods
 ```
 
 ```
