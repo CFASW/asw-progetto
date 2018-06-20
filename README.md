@@ -30,7 +30,7 @@ per orchestrare le tre applicazioni.
 È necessario che sia installato il software [Minikube](https://kubernetes.io/docs/setup/minikube/).
 
  
-### Orchestrazione di "Hello"
+## Orchestrazione di "Hello"
 
 Creare il Deployment e il Service:
 
@@ -53,7 +53,7 @@ deployment "hello" successfully rolled out
 ```
 
 
-#### Accedere al servizio
+### Accedere al servizio
 
 Leggere l'ip esterno di un nodo (campo NAME):
 
@@ -84,7 +84,7 @@ Aprire un browser e collegarsi al nodo (*172.17.8.101*) tramite la porta trovata
 *(potrebbe passare qualche minuto prima che l'applicazione sia disponibile)*
 
 
-#### Scalare "Hello"
+### Scalare "Hello"
 
 ```bash
 $ kubectl edit deployment/hello
@@ -118,7 +118,7 @@ Hello from hello-68dcdd9545-b6pf5!
 ```
 
 
-#### Rimuovere "Hello"
+### Rimuovere "Hello"
 
 Nel caso in cui si voglia rimuovere l'applicazione "Hello" dal nostro cluster Kubernetes si possono digitare i seguenti comandi:
 
@@ -128,8 +128,8 @@ $ kubectl delete deployment hello
 ```
  
  
- 
-### Orchestrazione di "Lucky word"
+
+## Orchestrazione di "Lucky word"
 
 Per la natura di "Lucky word" l'unico modo per avviarlo correttamente è quello di avviare per prima il *Deployment* e il *Service* del **config-server**, e solo dopo che questo sia correttamente avviato si può avviare anche il *Deployment* e il *Service* di **lucky-word**.
 
@@ -161,7 +161,7 @@ Ora è possibile [accedere al servizio come fatto con hello](#accedere-al-serviz
 
 
 
-### Orchestrazione di "Sentence"
+## Orchestrazione di "Sentence"
 
 ```bash
 for f in sentence-kubernetes/* 
