@@ -10,13 +10,17 @@ Questa repo contiene il progetto del corso di Architetture e Sistemi Software su
 
 ## Descrizione
 
-Il progetto riguarda l'orchestrazione di tre applicazioni:
+Il progetto riguarda l'orchestrazione di tre applicazioni usando [Kubernetes](https://kubernetes.io/).
 
  - [Lucky word](https://github.com/aswroma3/asw/tree/master/projects/asw-875-spring-cloud/a2-lucky-word-cloud-config-client)
  - [Hello](https://github.com/aswroma3/asw/tree/master/projects/asw-895-docker-orchestrazione/c-hello-service)
  - [Sentence](https://github.com/aswroma3/asw/tree/master/projects/asw-895-docker-orchestrazione/e-sentence-stack-zuul)
  
- 
+
+## Requisiti
+
+È necessario che sia installato il software [Minikube](https://kubernetes.io/docs/setup/minikube/).
+
  
 ### Orchestrazione di "Hello"
 
