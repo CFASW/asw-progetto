@@ -12,10 +12,18 @@ Questa repo contiene il progetto del corso di Architetture e Sistemi Software su
 
 Il progetto riguarda l'orchestrazione di tre applicazioni usando [Kubernetes](https://kubernetes.io/).
 
- - [Lucky word](https://github.com/aswroma3/asw/tree/master/projects/asw-875-spring-cloud/a2-lucky-word-cloud-config-client)
- - [Hello](https://github.com/aswroma3/asw/tree/master/projects/asw-895-docker-orchestrazione/c-hello-service)
- - [Sentence](https://github.com/aswroma3/asw/tree/master/projects/asw-895-docker-orchestrazione/e-sentence-stack-zuul)
+ - `hello` [link guida](#orchestrazione-di-hello) [link progetto](https://github.com/aswroma3/asw/tree/master/projects/asw-895-docker-orchestrazione/c-hello-service)
+ - `lucky-word` [link guida](#orchestrazione-di-lucky-word) [link progetto](https://github.com/aswroma3/asw/tree/master/projects/asw-875-spring-cloud/a2-lucky-word-cloud-config-client)
+ - `sentence` [link guida](#orchestrazione-di-sentence) [link progetto](https://github.com/aswroma3/asw/tree/master/projects/asw-895-docker-orchestrazione/e-sentence-stack-zuul)
  
+
+Tutti i progetti sono stati già compilati e sono state create tutte le immagini 
+Docker dei vari servizi e rese disponibili in 
+[un Docker Hub pubblico](https://hub.docker.com/r/chrimic/).
+
+In ogni cartella di questa repo sono disponibili le configurazioni YAML necessarie 
+per orchestrare le tre applicazioni.
+
 
 ## Requisiti
 
