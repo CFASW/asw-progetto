@@ -216,3 +216,17 @@ sentence   NodePort   10.100.49.57   <none>        8080:30807/TCP   5m
 Aprire un browser e collegarsi al nodo (*172.17.8.101*) tramite la porta trovata (*30807*): http://172.17.8.101:30807
 
 *(potrebbe passare qualche minuto prima che l'applicazione sia disponibile)*
+
+### Rimuovere *"sentence"*
+
+Nel caso in cui si voglia rimuovere l'applicazione "Sentence" dal nostro cluster Kubernetes si possono digitare i seguenti comandi:
+
+```bash
+$ kubectl delete svc --all
+$ kubectl delete deployment --all
+```
+ 
+ 
+
+
+
