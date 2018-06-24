@@ -189,7 +189,7 @@ Ci vorrà qualche minuto prima che lo **STATUS** dei pod cambi in **Running**.
 
 ---
 
-Leggere l'ip esterno di un nodo (campo NAME):
+Leggere l'ip esterno del cluster kubernetes:
 
 
 ```bash
