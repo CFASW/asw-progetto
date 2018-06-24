@@ -55,16 +55,15 @@ deployment "hello" successfully rolled out
 
 ### Accedere al servizio
 
-Leggere l'ip esterno di un nodo (campo `NAME`):
+Leggere l'ip esterno del cluster kubernetes:
 
 ```bash
-$ kubectl get nodes
+$ kubectl cluster-info
 ```
 
 ```
-NAME           STATUS                     ROLES     AGE       VERSION
-172.17.8.101   Ready,SchedulingDisabled   <none>    2d        v1.10.2
-172.17.8.102   Ready                      <none>    2d        v1.10.2
+Kubernetes master is running at https://192.168.99.100:8443
+KubeDNS is running at https://192.168.99.100:8443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
 ```
 
 Trovare la porta su cui il servizio è stato esportato (è sempre casuale):
@@ -192,15 +191,16 @@ Ci vorrà qualche minuto prima che lo **STATUS** dei pod cambi in **Running**.
 
 Leggere l'ip esterno di un nodo (campo NAME):
 
+
 ```bash
-$ kubectl get nodes
+$ kubectl cluster-info
 ```
 
 ```
-NAME           STATUS                     ROLES     AGE       VERSION
-172.17.8.101   Ready,SchedulingDisabled   <none>    2d        v1.10.2
-172.17.8.102   Ready                      <none>    2d        v1.10.2
+Kubernetes master is running at https://192.168.99.100:8443
+KubeDNS is running at https://192.168.99.100:8443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
 ```
+
 
 Trovare la porta su cui il servizio è stato esportato (è sempre casuale):
 
