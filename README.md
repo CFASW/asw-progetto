@@ -78,7 +78,7 @@ hello        NodePort    10.100.121.47   <none>        8080:30501/TCP   8m
 kubernetes   ClusterIP   10.100.0.1      <none>        443/TCP          2d
 ```
 
-Aprire un browser e collegarsi al nodo (*172.17.8.101*) tramite la porta trovata (*30501*): http://172.17.8.101:30501
+Aprire un browser e collegarsi al nodo (*192.168.99.100*) tramite la porta trovata (*30501*): http://192.168.99.100:30501
 
 *(potrebbe passare qualche minuto prima che l'applicazione sia disponibile)*
 
@@ -100,7 +100,7 @@ $ kubectl rollout status deployment/hello
 Aggiornando la pagina web numerose volte si dovrebbe vedere il nome della macchina (o meglio, del **pod**) cambiare. Ad esempio:
 
 ```bash
-$ for i in {1..10}; do; curl http://172.17.8.101:30501/; echo; done
+$ for i in {1..10}; do; curl http://192.168.99.100:30501/; echo; done
 ```
 
 ```
@@ -213,7 +213,7 @@ NAME       TYPE       CLUSTER-IP     EXTERNAL-IP   PORT(S)          AGE
 sentence   NodePort   10.100.49.57   <none>        8080:30807/TCP   5m
 ```
 
-Aprire un browser e collegarsi al nodo (*172.17.8.101*) tramite la porta trovata (*30807*): http://172.17.8.101:30807
+Aprire un browser e collegarsi al nodo (*192.168.99.100*) tramite la porta trovata (*30807*): http://192.168.99.100:30807
 
 *(potrebbe passare qualche minuto prima che l'applicazione sia disponibile)*
 
